@@ -1,0 +1,22 @@
+{
+  "pillars": [
+    {
+      "icon": "🛡",
+      "title": "Protect Your Child",
+      "description": "Access evidence-based information, clinical research, and practical tools to advocate for your child's wellbeing — even when professionals won't listen.",
+      "link_text": "Explore Resources"
+    },
+    {
+      "icon": "🤝",
+      "title": "Connect With Parents",
+      "description": "Join private peer support groups in your country. Talk with parents who truly understand — because they're living it too. No judgement. No pressure.",
+      "link_text": "Find Your Group"
+    },
+    {
+      "icon": "📣",
+      "title": "Take Action",
+      "description": "From letter templates to contact tools, we help you advocate in schools, with healthcare providers, and with policymakers — when staying silent isn't an option.",
+      "link_text": "Start Acting"
+    }
+  ]
+}
