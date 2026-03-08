@@ -1,0 +1,39 @@
+{
+  "testimonials": [
+    {
+      "name": "Mother of a desister",
+      "location": "United States",
+      "since": "2022",
+      "quote": "I thought I was the only parent who could see what was happening to my daughter. The guilt and the fear and the isolation were crushing me. Finding Our Duty was like finally being able to breathe. I met parents across the world who were in the exact same position — and who were still standing. That gave me the strength to keep going. Three years later, my daughter is doing so much better. We waited. We loved her. And we were right.",
+      "featured": true
+    },
+    {
+      "name": "Father",
+      "location": "United Kingdom",
+      "since": "",
+      "quote": "The peer support group in the UK gave me both the language and the courage I was looking for.",
+      "featured": false
+    },
+    {
+      "name": "Mother",
+      "location": "Australia",
+      "since": "",
+      "quote": "I was gaslit by the school, the therapist, and our own extended family. Our Duty showed me I wasn't crazy.",
+      "featured": false
+    },
+    {
+      "name": "Mother of a detransitioner",
+      "location": "Canada",
+      "since": "",
+      "quote": "My son detransitioned at 20. This community helped me know what to say — and what not to say — during the hardest years.",
+      "featured": false
+    },
+    {
+      "name": "Father",
+      "location": "Germany",
+      "since": "",
+      "quote": "The research on Our Duty is the most comprehensive I've found anywhere. It helped me walk into my daughter's school prepared.",
+      "featured": false
+    }
+  ]
+}
