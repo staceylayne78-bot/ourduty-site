@@ -1,0 +1,119 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Optional: media uploads
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# Show preview link
+site_url: "/"
+
+collections:
+
+  # ──────────────────────────────────────────
+  # TESTIMONIALS
+  # ──────────────────────────────────────────
+  - name: "testimonials"
+    label: "Testimonials"
+    files:
+      - name: "testimonials_list"
+        label: "All Testimonials"
+        file: "_data/testimonials.json"
+        format: json
+        description: "Add, edit, or remove parent testimonials shown on the homepage quote wall."
+        fields:
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.location}}"
+            fields:
+              - label: "Name / Role"
+                name: "name"
+                widget: "string"
+                hint: "e.g. 'Mother of a desister' or 'Father'"
+              - label: "Location"
+                name: "location"
+                widget: "string"
+                hint: "e.g. 'United States' or 'United Kingdom'"
+              - label: "Member Since (optional)"
+                name: "since"
+                widget: "string"
+                required: false
+                hint: "e.g. '2022' — leave blank if unknown"
+              - label: "Quote"
+                name: "quote"
+                widget: "text"
+                hint: "The testimonial text. Do not include quotation marks — they are added automatically."
+              - label: "Featured (large card)"
+                name: "featured"
+                widget: "boolean"
+                default: false
+                hint: "Turn on for the first/most prominent testimonial"
+
+  # ──────────────────────────────────────────
+  # HOW WE HELP (PILLARS)
+  # ──────────────────────────────────────────
+  - name: "pillars"
+    label: "How We Help"
+    files:
+      - name: "pillars_list"
+        label: "Pillars (How We Help Cards)"
+        file: "_data/pillars.json"
+        format: json
+        description: "Edit the three 'How We Help' cards shown in the middle of the homepage."
+        fields:
+          - label: "Pillars"
+            name: "pillars"
+            widget: "list"
+            summary: "{{fields.icon}} {{fields.title}}"
+            fields:
+              - label: "Icon (emoji)"
+                name: "icon"
+                widget: "string"
+                hint: "Paste an emoji, e.g. 🛡 🤝 📣 📚"
+              - label: "Title"
+                name: "title"
+                widget: "string"
+                hint: "e.g. 'Protect Your Child'"
+              - label: "Description"
+                name: "description"
+                widget: "text"
+                hint: "1–3 sentences describing this pillar"
+              - label: "Link Text"
+                name: "link_text"
+                widget: "string"
+                hint: "e.g. 'Explore Resources' (arrow added automatically)"
+
+  # ──────────────────────────────────────────
+  # SITE SETTINGS
+  # ──────────────────────────────────────────
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "_data/settings.json"
+        format: json
+        description: "Update the announcement bar, stats, and podcast episode count."
+        fields:
+          - label: "Announcement Bar Text"
+            name: "announcement_text"
+            widget: "string"
+            hint: "The message shown in the gold bar at the top of the page"
+          - label: "Podcast Episode Count"
+            name: "podcast_count"
+            widget: "string"
+            hint: "e.g. '16' or '17'"
+          - label: "Countries Stat"
+            name: "countries_count"
+            widget: "string"
+            hint: "e.g. '30+'"
+          - label: "Resources Stat"
+            name: "resources_count"
+            widget: "string"
+            hint: "e.g. '100+'"
+          - label: "Members Stat"
+            name: "members_count"
+            widget: "string"
+            hint: "e.g. '1K+'"
