@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Duty — International Parent Network</title>
+<style>
+  /* ============================================================
+     OPTION B: "THE BOLD"
+     Elevated, modern, cinematic. Strong editorial typographic
+     hierarchy. Richer use of space, animation, and contrast.
+     Wix note: Each <section> maps to a Wix Strip/Section block.
+     Fonts: Uses Google Fonts loaded below — in Wix, set fonts
+     in Site Design > Text Themes.
+  ============================================================ */
+
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy:       #0F2545;
+    --navy-mid:   #1B3A6B;
+    --gold:       #C9952B;
+    --gold-light: #E8B84B;
+    --cream:      #FDF8F0;
+    --blue-pale:  #EAF2F8;
+    --charcoal:   #1A1A2E;
+    --white:      #FFFFFF;
+    --text:       #1A1A1A;
+    --text-muted: #5a6272;
+    --accent:     #3A7BD5;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ---- ANNOUNCEMENT BAR ---- */
+  .announcement-bar {
+    background: var(--gold);
+    padding: 9px 20px;
+    text-align: center;
+    font-size: 13px; font-weight: 600; color: var(--navy);
+    letter-spacing: 0.2px;
+  }
+  .announcement-bar a { color: var(--navy); font-weight: 800; text-decoration: underline; }
+
+  /* ---- HEADER ---- */
+  .site-header {
+    background: var(--navy);
+    padding: 0 60px;
+    display: flex;
+    align-items: stretch;
+    min-height: 70px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .header-logo {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 0;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    padding-right: 30px; margin-right: 0;
+    text-decoration: none;
+  }
+  .logo-mark {
+    width: 42px; height: 42px;
+    border: 2px solid var(--gold);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 900;
+    color: var(--gold);
+  }
+  .logo-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--white); }
+  .logo-name span { color: var(--gold); }
+
+  /* NAV inline in header */
+  .header-nav {
+    flex: 1;
+    display: flex; align-items: center;
+    padding: 0 30px; gap: 2px;
+  }
+  .header-nav a {
+    color: rgba(255,255,255,0.72);
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 13px; font-weight: 500;
+    letter-spacing: 0.3px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .header-nav a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+  .header-nav a.active { color: var(--white); }
+  .header-nav .nav-new {
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+  .header-nav .nav-new::before {
+    content: '★ ';
+    font-size: 10px;
+  }
+
+  .header-actions {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 0 14px 30px;
+    border-left: 1px solid rgba(255,255,255,0.1);
+  }
+  .btn {
+    display: inline-flex; align-items: center;
+    padding: 9px 20px; font-size: 13px; font-weight: 700;
+    text-decoration: none; border-radius: 4px;
+    letter-spacing: 0.3px; transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .btn-join { background: var(--gold); color: var(--white); }
+  .btn-join:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-podcast {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.85);
+  }
+  .btn-podcast:hover { border-color: var(--white); color: var(--white); }
+  .btn-donate {
+    background: transparent;
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+  }
+  .btn-donate:hover { color: var(--white); }
+
+  /* ---- HERO — EDITORIAL SPLIT ---- */
+  .hero {
+    min-height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--charcoal);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    padding: 80px 60px 80px 80px;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-bottom: 30px;
+  }
+  .eyebrow-line { width: 40px; height: 2px; background: var(--gold); }
+  .eyebrow-text {
+    font-size: 11px; font-weight: 700; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 3px;
+  }
+  .hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 68px; font-weight: 900;
+    color: var(--white); line-height: 1.05;
+    margin-bottom: 28px;
+  }
+  .hero-headline em { color: var(--gold); font-style: normal; }
+  .hero-body {
+    font-size: 17px; line-height: 1.7;
+    color: rgba(255,255,255,0.65);
+    max-width: 460px;
+    margin-bottom: 44px;
+  }
+  .hero-ctas { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .hero-cta-primary {
+    padding: 16px 32px;
+    background: var(--gold); color: var(--white);
+    font-size: 14px; font-weight: 800;
+    text-decoration: none; border-radius: 4px;
+    letter-spacing: 0.3px;
+    transition: all 0.25s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .hero-cta-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,149,43,0.3); }
+  .hero-cta-secondary {
+    padding: 16px 24px;
+    border: 1.5px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.8);
+    font-size: 14px; font-weight: 600;
+    text-decoration: none; border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .hero-cta-secondary:hover { border-color: var(--white); color: var(--white); }
+  .hero-social {
+    margin-top: 48px; display: flex; align-items: center; gap: 16px;
+    padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .hero-social span { font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 1px; text-transform: uppercase; }
+  .hero-social a {
+    width: 34px; height: 34px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.5); font-size: 13px;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .hero-social a:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-right {
+    position: relative;
+    background: var(--navy-mid);
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    overflow: hidden;
+  }
+  /* Animated background pattern */
+  .hero-pattern {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 50%, rgba(201,149,43,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(58,123,213,0.1) 0%, transparent 50%);
+  }
+  .hero-card-stack {
+    position: relative; z-index: 2;
+    padding: 40px;
+    display: flex; flex-direction: column; gap: 16px;
+    width: 100%;
+  }
+  .mission-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-left: 3px solid var(--gold);
+    border-radius: 8px; padding: 22px 26px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+  }
+  .mission-card:hover { background: rgba(255,255,255,0.1); transform: translateX(-4px); }
+  .mission-card .mc-label { font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+  .mission-card .mc-text { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.5; }
+  .hero-stat-row {
+    display: flex; gap: 16px; padding: 0 40px;
+    position: relative; z-index: 2;
+    margin-top: 8px;
+  }
+  .hero-stat {
+    flex: 1;
+    background: rgba(201,149,43,0.12);
+    border: 1px solid rgba(201,149,43,0.25);
+    border-radius: 8px; padding: 16px;
+    text-align: center;
+  }
+  .hero-stat .hs-num { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 900; color: var(--gold); }
+  .hero-stat .hs-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* ---- MARQUEE STRIP ---- */
+  .marquee-strip {
+    background: var(--gold);
+    padding: 12px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-inner {
+    display: inline-block;
+    animation: marquee 25s linear infinite;
+    font-size: 13px; font-weight: 700; color: var(--navy);
+    letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .marquee-inner span { margin: 0 30px; }
+  .marquee-inner .sep { color: rgba(15,37,69,0.4); }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ---- MISSION PILLARS ---- */
+  .pillars-section {
+    padding: 90px 80px;
+    background: var(--cream);
+  }
+  .section-header { margin-bottom: 56px; }
+  .section-header .eyebrow {
+    font-size: 11px; font-weight: 700; color: var(--gold);
+    letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
+  }
+  .section-header .eyebrow::after { content: ''; flex: 0 0 40px; height: 1px; background: var(--gold); }
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px; font-weight: 900;
+    color: var(--navy); line-height: 1.15;
+    max-width: 560px;
+  }
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .pillar-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 36px 32px;
+    border-top: 4px solid var(--gold);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    transition: all 0.3s;
+  }
+  .pillar-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+  .pillar-icon {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; margin-bottom: 22px;
+  }
+  .pillar-card h3 { font-size: 19px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+  .pillar-card p { font-size: 14px; line-height: 1.65; color: var(--text-muted); }
+  .pillar-card .pillar-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 20px; font-size: 13px; font-weight: 700;
+    color: var(--gold); text-decoration: none;
+    transition: gap 0.2s;
+  }
+  .pillar-card .pillar-link:hover { gap: 10px; }
+
+  /* ---- QUOTE WALL ---- */
+  .quote-wall {
+    background: var(--navy);
+    padding: 90px 80px;
+    position: relative; overflow: hidden;
+  }
+  .quote-wall::before {
+    content: '"';
+    position: absolute; top: -20px; left: 60px;
+    font-family: 'Playfair Display', serif;
+    font-size: 280px; color: rgba(201,149,43,0.08);
+    line-height: 1;
+  }
+  .qw-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 50px;
+    position: relative; z-index: 2;
+  }
+  .qw-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px; font-weight: 900; color: var(--white);
+    max-width: 400px;
+  }
+  .qw-header p { font-size: 14px; color: rgba(255,255,255,0.5); max-width: 280px; text-align: right; line-height: 1.6; }
+  .quotes-masonry {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    position: relative; z-index: 2;
+  }
+  .quote-tile {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 10px; padding: 28px 26px;
+    transition: all 0.3s;
+  }
+  .quote-tile:hover { background: rgba(255,255,255,0.09); border-color: rgba(201,149,43,0.3); }
+  .quote-tile.feature {
+    grid-row: 1 / 3;
+    background: rgba(201,149,43,0.08);
+    border-color: rgba(201,149,43,0.25);
+  }
+  .qt-stars { color: var(--gold); font-size: 13px; margin-bottom: 14px; letter-spacing: 2px; }
+  .qt-text { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.8); font-style: italic; margin-bottom: 20px; }
+  .quote-tile.feature .qt-text { font-size: 17px; }
+  .qt-author { display: flex; align-items: center; gap: 10px; }
+  .qt-avatar {
+    width: 36px; height: 36px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: var(--navy);
+  }
+  .qt-name { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.7); }
+  .qt-loc { font-size: 11px; color: rgba(255,255,255,0.4); }
+
+  /* ---- PODCAST — EDITORIAL ---- */
+  .podcast-editorial {
+    background: var(--white);
+    padding: 90px 80px;
+  }
+  .pod-layout {
+    display: grid; grid-template-columns: 1fr 2fr;
+    gap: 60px; align-items: start;
+  }
+  .pod-sidebar {
+    position: sticky; top: 100px;
+  }
+  .pod-sidebar .eyebrow {
+    font-size: 11px; font-weight: 700; color: var(--gold);
+    letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .pod-sidebar h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px; font-weight: 900; color: var(--navy);
+    line-height: 1.15; margin-bottom: 18px;
+  }
+  .pod-sidebar p { font-size: 14px; line-height: 1.7; color: var(--text-muted); margin-bottom: 28px; }
+  .pod-platforms {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 30px;
+  }
+  .platform-badge {
+    padding: 7px 14px;
+    border: 1.5px solid var(--navy);
+    border-radius: 20px;
+    font-size: 12px; font-weight: 600; color: var(--navy);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .platform-badge:hover { background: var(--navy); color: white; }
+  .pod-sidebar .all-eps-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 14px; font-weight: 700; color: var(--gold);
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+  .pod-sidebar .all-eps-link:hover { gap: 14px; }
+
+  .pod-episodes { display: flex; flex-direction: column; gap: 20px; }
+  .ep-row {
+    display: flex; gap: 22px;
+    padding: 28px;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 10px;
+    transition: all 0.25s;
+    cursor: pointer;
+    align-items: flex-start;
+    text-decoration: none; color: inherit;
+  }
+  .ep-row:hover { border-color: var(--gold); box-shadow: 0 6px 24px rgba(0,0,0,0.06); transform: translateX(4px); }
+  .ep-row.featured { background: linear-gradient(135deg, var(--navy), var(--navy-mid)); color: var(--white); border-color: transparent; }
+  .ep-row.featured:hover { transform: translateX(4px); box-shadow: 0 8px 30px rgba(15,37,69,0.3); }
+  .ep-num-badge {
+    flex-shrink: 0;
+    width: 48px; height: 48px;
+    background: var(--gold);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900; color: var(--white);
+    margin-top: 2px;
+  }
+  .ep-row.featured .ep-num-badge { background: rgba(255,255,255,0.2); }
+  .ep-info { flex: 1; }
+  .ep-tag {
+    font-size: 10px; font-weight: 700; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 1.5px;
+    margin-bottom: 6px;
+  }
+  .ep-row.featured .ep-tag { color: rgba(255,255,255,0.5); }
+  .ep-row-title { font-size: 16px; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+  .ep-row-desc { font-size: 13px; line-height: 1.5; color: var(--text-muted); }
+  .ep-row.featured .ep-row-desc { color: rgba(255,255,255,0.6); }
+  .ep-action {
+    flex-shrink: 0;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 13px;
+    margin-top: 2px;
+  }
+  .ep-row.featured .ep-action { background: rgba(255,255,255,0.15); }
+
+  /* ---- DETRANS — CINEMATIC ---- */
+  .detrans-cinematic {
+    position: relative;
+    background: var(--navy);
+    padding: 100px 80px;
+    overflow: hidden;
+  }
+  .dc-bg-text {
+    position: absolute; top: -30px; right: -20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 200px; font-weight: 900;
+    color: rgba(255,255,255,0.03);
+    line-height: 1; pointer-events: none;
+    white-space: nowrap;
+  }
+  .dc-inner {
+    position: relative; z-index: 2;
+  }
+  .dc-top {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 56px;
+  }
+  .dc-top .eyebrow {
+    font-size: 11px; font-weight: 700; color: var(--gold);
+    letter-spacing: 3px; text-transform: uppercase; margin-bottom: 14px;
+  }
+  .dc-top h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px; font-weight: 900; color: var(--white);
+    line-height: 1.1; max-width: 500px;
+  }
+  .dc-top h2 em { color: var(--gold); font-style: normal; }
+  .dc-top-right { max-width: 300px; text-align: right; }
+  .dc-top-right p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 18px; }
+  .dc-top-right a {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px; background: var(--gold); color: white;
+    font-weight: 700; font-size: 13px; text-decoration: none;
+    border-radius: 6px; transition: all 0.2s;
+  }
+  .dc-top-right a:hover { background: var(--gold-light); }
+  .video-wall {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 14px;
+  }
+  .vw-card {
+    position: relative;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden; cursor: pointer;
+    transition: all 0.3s;
+    aspect-ratio: 16/9;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .vw-card:hover { border-color: var(--gold); transform: scale(1.01); }
+  .vw-card.large { grid-row: 1 / 3; aspect-ratio: auto; }
+  .vw-play {
+    position: absolute;
+    width: 56px; height: 56px;
+    background: rgba(201,149,43,0.9);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 20px;
+    transition: transform 0.2s;
+    z-index: 2;
+  }
+  .vw-card:hover .vw-play { transform: scale(1.1); }
+  .vw-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+    padding: 20px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    z-index: 1;
+  }
+  .vw-label { font-size: 13px; font-weight: 700; color: var(--white); line-height: 1.3; }
+  .vw-sub { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 3px; }
+  /* Placeholder gradient backgrounds for video cards */
+  .vw-card:nth-child(1) { background: linear-gradient(135deg, #1a3a6b, #0a1628); }
+  .vw-card:nth-child(2) { background: linear-gradient(135deg, #2d1b69, #1a0a3c); }
+  .vw-card:nth-child(3) { background: linear-gradient(135deg, #1a5276, #0a2840); }
+  .vw-card:nth-child(4) { background: linear-gradient(135deg, #1b4f4a, #0a2828); }
+  .vw-card:nth-child(5) { background: linear-gradient(135deg, #4a1942, #200a20); }
+
+  /* ---- STATS — DRAMATIC ---- */
+  .stats-dramatic {
+    background: var(--cream);
+    padding: 80px;
+  }
+  .stats-row {
+    display: flex; gap: 0;
+    max-width: 1000px; margin: 0 auto;
+    border: 2px solid var(--navy);
+    border-radius: 12px; overflow: hidden;
+  }
+  .stat-block {
+    flex: 1; padding: 44px 32px;
+    text-align: center;
+    border-right: 1px solid rgba(15,37,69,0.15);
+    transition: background 0.2s;
+  }
+  .stat-block:last-child { border-right: none; }
+  .stat-block:hover { background: var(--navy); }
+  .stat-block:hover .sb-num,
+  .stat-block:hover .sb-label { color: var(--white); }
+  .sb-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 54px; font-weight: 900; color: var(--navy);
+    line-height: 1; transition: color 0.2s;
+  }
+  .sb-num sup { font-size: 28px; color: var(--gold); vertical-align: super; }
+  .sb-label { font-size: 12px; font-weight: 700; color: var(--text-muted); margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
+
+  /* ---- JOIN CTA — EDITORIAL ---- */
+  .join-editorial {
+    background: var(--navy);
+    padding: 100px 80px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+    position: relative; overflow: hidden;
+  }
+  .join-editorial::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(201,149,43,0.08) 0%, transparent 60%);
+  }
+  .je-left { position: relative; z-index: 2; }
+  .je-left .eyebrow {
+    font-size: 11px; font-weight: 700; color: var(--gold);
+    letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px;
+  }
+  .je-left h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px; font-weight: 900; color: var(--white);
+    line-height: 1.1; margin-bottom: 20px;
+  }
+  .je-left h2 em { color: var(--gold); font-style: normal; }
+  .je-left p { font-size: 16px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+  .je-right { position: relative; z-index: 2; }
+  .je-form {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px; padding: 40px;
+  }
+  .je-form h3 { font-size: 18px; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+  .je-form p { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 24px; }
+  .je-form input {
+    width: 100%; padding: 14px 18px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px; color: white; font-size: 14px;
+    margin-bottom: 12px; outline: none;
+    transition: border-color 0.2s;
+  }
+  .je-form input::placeholder { color: rgba(255,255,255,0.3); }
+  .je-form input:focus { border-color: var(--gold); }
+  .je-form button {
+    width: 100%; padding: 16px;
+    background: var(--gold); color: white;
+    font-size: 14px; font-weight: 800;
+    border: none; border-radius: 6px; cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+  }
+  .je-form button:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .je-privacy { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; margin-top: 12px; }
+
+  /* ---- FOOTER ---- */
+  .site-footer {
+    background: var(--charcoal);
+    padding: 60px 80px 30px;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px; margin-bottom: 50px;
+  }
+  .footer-brand h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; color: var(--white); margin-bottom: 12px;
+  }
+  .footer-brand h3 span { color: var(--gold); }
+  .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.7; margin-bottom: 20px; max-width: 280px; }
+  .footer-social { display: flex; gap: 10px; }
+  .footer-social a {
+    width: 34px; height: 34px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.4); font-size: 13px; text-decoration: none;
+    transition: all 0.2s;
+  }
+  .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+  .footer-col h4 { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 18px; }
+  .footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px; color: rgba(255,255,255,0.25);
+  }
+
+  /* ---- VERSION BADGE ---- */
+  .version-badge {
+    position: fixed; bottom: 20px; right: 20px;
+    background: var(--gold); color: white;
+    padding: 8px 16px; border-radius: 20px;
+    font-size: 12px; font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 999; letter-spacing: 0.5px;
+  }
+
+  /* ---- WIX NOTES ---- */
+  [data-wix] { position: relative; }
+  [data-wix]::after {
+    content: attr(data-wix);
+    position: absolute; top: 4px; left: 4px;
+    background: rgba(0,100,255,0.1); border: 1px dashed rgba(0,100,255,0.3);
+    color: rgba(0,80,200,0.5); font-size: 10px;
+    padding: 2px 6px; border-radius: 3px;
+    pointer-events: none; font-family: monospace; z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+
+<!-- ANNOUNCEMENT BAR | Wix: Top Notification Bar app -->
+<div class="announcement-bar" data-wix="Wix: Notification Bar app or top strip">
+  <span id="announcement-content">🎙️ New Episode: <a href="#">"When Schools Hide It From Parents" — Listen Now →</a></span>
+</div>
+
+<!-- HEADER + NAV COMBINED | Wix: Single sticky header section -->
+<header class="site-header" data-wix="Wix: Sticky header — logo + menu + buttons">
+  <a href="#" class="header-logo">
+    <div class="logo-mark">OD</div>
+    <div class="logo-name">Our <span>Duty</span></div>
+  </a>
+  <nav class="header-nav">
+    <a href="#" class="active">Home</a>
+    <a href="#">The Issue</a>
+    <a href="#">For Parents</a>
+    <a href="#" class="nav-new">Desisters &amp; Detrans</a>
+    <a href="#" class="nav-new">Podcast</a>
+    <a href="#">Take Action</a>
+    <a href="#">About</a>
+  </nav>
+  <div class="header-actions">
+    <a href="#" class="btn btn-podcast">🎙 Podcast</a>
+    <a href="#" class="btn btn-join">Join Us</a>
+    <a href="#" class="btn btn-donate">Donate ♥</a>
+  </div>
+</header>
+
+<!-- HERO — EDITORIAL SPLIT | Wix: 2-col strip, left text + right cards -->
+<section class="hero" data-wix="Wix: 2-col strip — text left, card stack right">
+  <!-- Left: editorial text block -->
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">International Parent Network</span>
+    </div>
+    <h1 class="hero-headline">
+      Your children<br>
+      deserve the<br>
+      <em>truth.</em>
+    </h1>
+    <p class="hero-body">
+      Our Duty is an evidence-based international support network for parents protecting their children from gender ideology. You are not alone — and you are not powerless.
+    </p>
+    <div class="hero-ctas">
+      <a href="#" class="hero-cta-primary">Join Free Today →</a>
+      <a href="#" class="hero-cta-secondary">Watch Parent Stories</a>
+    </div>
+    <div class="hero-social">
+      <span>Follow</span>
+      <a href="#">𝕏</a>
+      <a href="#">f</a>
+      <a href="#">▶</a>
+      <a href="#">✉</a>
+    </div>
+  </div>
+
+  <!-- Right: mission cards + stats -->
+  <div class="hero-right">
+    <div class="hero-pattern"></div>
+    <div class="hero-card-stack">
+      <div class="mission-card">
+        <div class="mc-label">We protect children from</div>
+        <div class="mc-text">Social and medical transition driven by ideology, not evidence — in schools, clinics, and online spaces.</div>
+      </div>
+      <div class="mission-card">
+        <div class="mc-label">We support parents who are</div>
+        <div class="mc-text">Gender-questioning teens' families · Parents of desisters & detransitioners · Grandparents and educators who want to understand.</div>
+      </div>
+      <div class="mission-card">
+        <div class="mc-label">We offer</div>
+        <div class="mc-text">Private peer support groups in 30+ countries · Research and resources · A podcast · Activism tools.</div>
+      </div>
+    </div>
+    <div class="hero-stat-row">
+      <div class="hero-stat">
+        <div class="hs-num">30+</div>
+        <div class="hs-label">Countries</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hs-num" id="hero-podcast-count">16</div>
+        <div class="hs-label">Episodes</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hs-num">1000s</div>
+        <div class="hs-label">of Parents</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE STRIP | Wix: Ticker/marquee strip or custom HTML widget -->
+<div class="marquee-strip" data-wix="Wix: Custom HTML widget — CSS marquee">
+  <div class="marquee-inner">
+    <span>International Parent Network</span><span class="sep">◆</span>
+    <span>Evidence-Based</span><span class="sep">◆</span>
+    <span>Parent-Led</span><span class="sep">◆</span>
+    <span>30+ Countries</span><span class="sep">◆</span>
+    <span>New Podcast Episode Every Month</span><span class="sep">◆</span>
+    <span>Desisters &amp; Detrans Support</span><span class="sep">◆</span>
+    <span>Free Parent Registration</span><span class="sep">◆</span>
+    <span>International Parent Network</span><span class="sep">◆</span>
+    <span>Evidence-Based</span><span class="sep">◆</span>
+    <span>Parent-Led</span><span class="sep">◆</span>
+    <span>30+ Countries</span><span class="sep">◆</span>
+    <span>New Podcast Episode Every Month</span><span class="sep">◆</span>
+    <span>Desisters &amp; Detrans Support</span><span class="sep">◆</span>
+    <span>Free Parent Registration</span><span class="sep">◆</span>
+  </div>
+</div>
+
+<!-- PILLARS | Wix: 3-col repeater / pro gallery -->
+<section class="pillars-section" data-wix="Wix: 3-col Repeater">
+  <div class="section-header">
+    <div class="eyebrow">What We Do</div>
+    <h2>Built by parents.<br>For parents.</h2>
+  </div>
+  <div class="pillars-grid" id="pillars-grid">
+    <div class="pillar-card">
+      <div class="pillar-icon">🛡</div>
+      <h3>Protect Your Child</h3>
+      <p>Access evidence-based information, clinical research, and practical tools to advocate for your child's wellbeing — even when professionals won't listen.</p>
+      <a href="#" class="pillar-link">Explore Resources →</a>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">🤝</div>
+      <h3>Connect With Parents</h3>
+      <p>Join private peer support groups in your country. Talk with parents who truly understand — because they're living it too. No judgement. No pressure.</p>
+      <a href="#" class="pillar-link">Find Your Group →</a>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">📣</div>
+      <h3>Take Action</h3>
+      <p>From letter templates to contact tools, we help you advocate in schools, with healthcare providers, and with policymakers — when staying silent isn't an option.</p>
+      <a href="#" class="pillar-link">Start Acting →</a>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE WALL | Wix: Strip (dark) + Repeater, masonry layout via Wix Pro Gallery -->
+<section class="quote-wall" data-wix="Wix: Strip (dark) + Repeater or Pro Gallery (masonry)">
+  <div class="qw-header">
+    <h2>Thousands of parents. One shared experience.</h2>
+    <p>Every voice in our community has walked a path like yours. Here's what they say about finding Our Duty.</p>
+  </div>
+  <div class="quotes-masonry" id="testimonials-masonry">
+    <div class="quote-tile feature">
+      <div class="qt-stars">★★★★★</div>
+      <div class="qt-text">"I thought I was the only parent who could see what was happening to my daughter. The guilt and the fear and the isolation were crushing me. Finding Our Duty was like finally being able to breathe. I met parents across the world who were in the exact same position — and who were still standing. That gave me the strength to keep going. Three years later, my daughter is doing so much better. We waited. We loved her. And we were right."</div>
+      <div class="qt-author">
+        <div class="qt-avatar">M</div>
+        <div>
+          <div class="qt-name">Mother of a desister</div>
+          <div class="qt-loc">United States — member since 2022</div>
+        </div>
+      </div>
+    </div>
+    <div class="quote-tile">
+      <div class="qt-stars">★★★★★</div>
+      <div class="qt-text">"The peer support group in the UK gave me both the language and the courage I was looking for."</div>
+      <div class="qt-author">
+        <div class="qt-avatar">F</div>
+        <div>
+          <div class="qt-name">Father — United Kingdom</div>
+          <div class="qt-loc">Parent Support Group Member</div>
+        </div>
+      </div>
+    </div>
+    <div class="quote-tile">
+      <div class="qt-stars">★★★★★</div>
+      <div class="qt-text">"I was gaslit by the school, the therapist, and our own extended family. Our Duty showed me I wasn't crazy."</div>
+      <div class="qt-author">
+        <div class="qt-avatar">J</div>
+        <div>
+          <div class="qt-name">Mother — Australia</div>
+          <div class="qt-loc">Active Community Member</div>
+        </div>
+      </div>
+    </div>
+    <div class="quote-tile">
+      <div class="qt-stars">★★★★★</div>
+      <div class="qt-text">"My son detransitioned at 20. This community helped me know what to say — and what not to say — during the hardest years."</div>
+      <div class="qt-author">
+        <div class="qt-avatar">L</div>
+        <div>
+          <div class="qt-name">Mother of a detransitioner</div>
+          <div class="qt-loc">Canada</div>
+        </div>
+      </div>
+    </div>
+    <div class="quote-tile">
+      <div class="qt-stars">★★★★★</div>
+      <div class="qt-text">"The research on Our Duty is the most comprehensive I've found anywhere. It helped me walk into my daughter's school prepared."</div>
+      <div class="qt-author">
+        <div class="qt-avatar">D</div>
+        <div>
+          <div class="qt-name">Father — Germany</div>
+          <div class="qt-loc">Resource Library User</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PODCAST — EDITORIAL | Wix: 2-col strip, sticky left sidebar + episode list right -->
+<section class="podcast-editorial" data-wix="Wix: 2-col strip — sidebar left, repeater right">
+  <div class="pod-layout">
+    <!-- Sidebar -->
+    <div class="pod-sidebar">
+      <div class="eyebrow">New to Our Duty</div>
+      <h2>The Our Duty Podcast</h2>
+      <p>Real conversations with parents, researchers, clinicians, and people with lived experience. Science without ideology. Stories without agenda.</p>
+      <div class="pod-platforms">
+        <a href="#" class="platform-badge">🎵 Spotify</a>
+        <a href="#" class="platform-badge">🎙 Apple</a>
+        <a href="#" class="platform-badge">▶ YouTube</a>
+        <a href="#" class="platform-badge">☁ RSS</a>
+      </div>
+      <a href="#" class="all-eps-link">View All 16 Episodes →</a>
+    </div>
+
+    <!-- Episodes -->
+    <div class="pod-episodes">
+      <a href="#" class="ep-row featured">
+        <div class="ep-num-badge">16</div>
+        <div class="ep-info">
+          <div class="ep-tag">Latest Episode</div>
+          <div class="ep-row-title">When Schools Hide It From Parents: What the Law Actually Says</div>
+          <div class="ep-row-desc">A conversation with a family law attorney on parental rights, school social transition policies, and what you can legally demand.</div>
+        </div>
+        <div class="ep-action">▶</div>
+      </a>
+      <a href="#" class="ep-row">
+        <div class="ep-num-badge">15</div>
+        <div class="ep-info">
+          <div class="ep-tag">Clinical</div>
+          <div class="ep-row-title">The Therapist Who Questioned the Narrative — And Lost Her License</div>
+          <div class="ep-row-desc">An honest conversation about clinical courage, professional consequences, and why the science matters.</div>
+        </div>
+        <div class="ep-action">▶</div>
+      </a>
+      <a href="#" class="ep-row">
+        <div class="ep-num-badge">14</div>
+        <div class="ep-info">
+          <div class="ep-tag">Desistance</div>
+          <div class="ep-row-title">My Daughter Desisted: Three Years of Patience, Love, and Waiting</div>
+          <div class="ep-row-desc">A mother's journey from her daughter's social transition to reconnection — without medical intervention.</div>
+        </div>
+        <div class="ep-action">▶</div>
+      </a>
+      <a href="#" class="ep-row">
+        <div class="ep-num-badge">13</div>
+        <div class="ep-info">
+          <div class="ep-tag">International</div>
+          <div class="ep-row-title">Sweden, Finland, UK: Why Countries Are Reversing Course</div>
+          <div class="ep-row-desc">A look at the landmark national reviews and what they mean for parents and policymakers worldwide.</div>
+        </div>
+        <div class="ep-action">▶</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DESISTERS & DETRANS | Wix: Strip (dark) + video grid -->
+<section class="detrans-cinematic" data-wix="Wix: Strip (dark) + Wix Video widget grid or Pro Gallery">
+  <div class="dc-bg-text">RETURN</div>
+  <div class="dc-inner">
+    <div class="dc-top">
+      <div>
+        <div class="eyebrow">New Section</div>
+        <h2>For parents of<br><em>desisters</em> &amp;<br>detransitioners.</h2>
+      </div>
+      <div class="dc-top-right">
+        <p>If your child has stepped back from a transgender identity — or is questioning it after transition — this space was built for your experience, not theirs.</p>
+        <a href="#">Watch Parent Videos →</a>
+      </div>
+    </div>
+    <div class="video-wall">
+      <div class="vw-card large">
+        <div class="vw-play">▶</div>
+        <div class="vw-overlay">
+          <div class="vw-label">"My son detransitioned at 19. Here's what I wish someone had told me at the beginning."</div>
+          <div class="vw-sub">Mother — United States · 18 min</div>
+        </div>
+      </div>
+      <div class="vw-card">
+        <div class="vw-play" style="width:40px;height:40px;font-size:15px;">▶</div>
+        <div class="vw-overlay">
+          <div class="vw-label">Two years of waiting — she came back to herself</div>
+          <div class="vw-sub">Mother — Canada · 12 min</div>
+        </div>
+      </div>
+      <div class="vw-card">
+        <div class="vw-play" style="width:40px;height:40px;font-size:15px;">▶</div>
+        <div class="vw-overlay">
+          <div class="vw-label">What our family did differently</div>
+          <div class="vw-sub">Father — UK · 9 min</div>
+        </div>
+      </div>
+      <div class="vw-card">
+        <div class="vw-play" style="width:40px;height:40px;font-size:15px;">▶</div>
+        <div class="vw-overlay">
+          <div class="vw-label">Finding our support group changed everything</div>
+          <div class="vw-sub">Mother — Australia · 8 min</div>
+        </div>
+      </div>
+      <div class="vw-card">
+        <div class="vw-play" style="width:40px;height:40px;font-size:15px;">▶</div>
+        <div class="vw-overlay">
+          <div class="vw-label">Surviving the system: detransition and the aftermath</div>
+          <div class="vw-sub">Parent — Germany · 15 min</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS | Wix: Strip + stat text boxes with hover -->
+<section class="stats-dramatic" data-wix="Wix: Strip (cream) + 4-col text boxes">
+  <div class="section-header" style="text-align:center; margin-bottom:40px;">
+    <div class="eyebrow" style="justify-content:center;">Our Reach</div>
+    <h2 style="font-family:'Playfair Display',serif; font-size:36px; color:var(--navy); margin:0 auto; max-width:100%;">A growing movement, one family at a time.</h2>
+  </div>
+  <div class="stats-row">
+    <div class="stat-block">
+      <div class="sb-num" id="stat-countries">30<sup>+</sup></div>
+      <div class="sb-label">Countries</div>
+    </div>
+    <div class="stat-block">
+      <div class="sb-num" id="stat-podcast">16<sup>+</sup></div>
+      <div class="sb-label">Podcast Episodes</div>
+    </div>
+    <div class="stat-block">
+      <div class="sb-num" id="stat-resources">100<sup>+</sup></div>
+      <div class="sb-label">Resources</div>
+    </div>
+    <div class="stat-block">
+      <div class="sb-num" id="stat-members">1K<sup>+</sup></div>
+      <div class="sb-label">Parent Members</div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN CTA | Wix: 2-col strip — editorial text + form -->
+<section class="join-editorial" data-wix="Wix: 2-col strip — text left, form right (Wix Forms)">
+  <div class="je-left">
+    <div class="eyebrow">Join the Network</div>
+    <h2>You don't have to navigate this <em>alone.</em></h2>
+    <p>Register free to access private support groups in your country, research resources, and a parent community that truly understands. No judgement. Just parents helping parents.</p>
+  </div>
+  <div class="je-right">
+    <div class="je-form">
+      <h3>Join Our Duty — Free</h3>
+      <p>Connect with parents in your country. Access all resources immediately.</p>
+      <input type="text" placeholder="Your first name">
+      <input type="email" placeholder="Your email address">
+      <input type="text" placeholder="Your country">
+      <button>Join Now — It's Free →</button>
+      <div class="je-privacy">🔒 Your information is private. We never share your data.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER | Wix: Footer section -->
+<footer class="site-footer" data-wix="Wix: Footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>Our <span>Duty</span></h3>
+      <p>An international evidence-based support network for parents who wish to protect their children from gender ideology. Parent-led. Science-backed. Free to join.</p>
+      <div class="footer-social">
+        <a href="#">𝕏</a>
+        <a href="#">f</a>
+        <a href="#">▶</a>
+        <a href="#">✉</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Sections</h4>
+      <a href="#">Home</a>
+      <a href="#">The Issue</a>
+      <a href="#">For Parents</a>
+      <a href="#">Desisters & Detrans ★</a>
+      <a href="#">Podcast ★</a>
+      <a href="#">Take Action</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="#">Join Free</a>
+      <a href="#">Donate</a>
+      <a href="#">Country Groups</a>
+      <a href="#">Find Professional Help</a>
+      <a href="#">Downloadable Guides</a>
+    </div>
+    <div class="footer-col">
+      <h4>Organisation</h4>
+      <a href="#">About Us</a>
+      <a href="#">Press & Media</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Our Duty — International Parent Network</span>
+    <span>★ = New sections in this redesign</span>
+  </div>
+</footer>
+
+
+<!-- ================================================================
+     DYNAMIC CONTENT LOADER — loads from /_data/*.json
+     Managed via Decap CMS at /admin
+================================================================ -->
+<script>
+(function() {
+  'use strict';
+
+  // ── RENDER TESTIMONIALS ──────────────────────────────────────────
+  function renderTestimonials(testimonials) {
+    var container = document.getElementById('testimonials-masonry');
+    if (!container || !testimonials || !testimonials.length) return;
+    container.innerHTML = testimonials.map(function(t, i) {
+      var avatar = (t.name || 'P').charAt(0).toUpperCase();
+      var locLine = t.location || '';
+      if (t.since) locLine += ' — member since ' + t.since;
+      var isFeatured = t.featured || i === 0;
+      return '<div class="quote-tile' + (isFeatured ? ' feature' : '') + '">' +
+        '<div class="qt-stars">★★★★★</div>' +
+        '<div class="qt-text">"' + escHtml(t.quote || '') + '"</div>' +
+        '<div class="qt-author">' +
+          '<div class="qt-avatar">' + escHtml(avatar) + '</div>' +
+          '<div>' +
+            '<div class="qt-name">' + escHtml(t.name || '') + '</div>' +
+            '<div class="qt-loc">' + escHtml(locLine) + '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  // ── RENDER PILLARS ───────────────────────────────────────────────
+  function renderPillars(pillars) {
+    var container = document.getElementById('pillars-grid');
+    if (!container || !pillars || !pillars.length) return;
+    container.innerHTML = pillars.map(function(p) {
+      return '<div class="pillar-card">' +
+        '<div class="pillar-icon">' + (p.icon || '◆') + '</div>' +
+        '<h3>' + escHtml(p.title || '') + '</h3>' +
+        '<p>' + escHtml(p.description || '') + '</p>' +
+        '<a href="#" class="pillar-link">' + escHtml(p.link_text || 'Learn More') + ' →</a>' +
+      '</div>';
+    }).join('');
+  }
+
+  // ── APPLY SETTINGS ───────────────────────────────────────────────
+  function applySettings(s) {
+    if (!s) return;
+    // Announcement bar
+    var ann = document.getElementById('announcement-content');
+    if (ann && s.announcement_text) ann.textContent = s.announcement_text;
+    // Stats
+    setInnerHTML('stat-countries', s.countries_count);
+    setInnerHTML('stat-podcast', (s.podcast_count || '') + '<sup>+</sup>');
+    setInnerHTML('stat-resources', s.resources_count);
+    setInnerHTML('stat-members', s.members_count);
+    // Hero stats
+    var heroEp = document.getElementById('hero-podcast-count');
+    if (heroEp && s.podcast_count) heroEp.textContent = s.podcast_count;
+    // Podcast link text
+    var allEpsLink = document.querySelector('.all-eps-link');
+    if (allEpsLink && s.podcast_count) {
+      allEpsLink.textContent = 'View All ' + s.podcast_count + ' Episodes →+;
+    }
+  }
+
+  function setInnerHTML(id, html) {
+    var el = document.getElementById(id);
+    if (el && html) el.innerHTML = html;
+  }
+
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  // ── FETCH DATA ───────────────────────────────────────────────────
+  function fetchJSON(url) {
+    return fetch(url + '?v=' + Date.now())
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .catch(function() { return null; });
+  }
+
+  // Load all data sources in parallel
+  Promise.all([
+    fetchJSON('/_data/testimonials.json'),
+    fetchJSON('/_data/pillars.json'),
+    fetchJSON('/_data/settings.json')
+  ]).then(function(results) {
+    var testimonialData = results[0];
+    var pillarData = results[1];
+    var settingsData = results[2];
+
+    if (testimonialData && testimonialData.testimonials) {
+      renderTestimonials(testimonialData.testimonials);
+    }
+    if (pillarData && pillarData.pillars) {
+      renderPillars(pillarData.pillars);
+    }
+    if (settingsData) {
+      applySettings(settingsData);
+    }
+  });
+
+})();
+</script>
+
+</body>
+</html>
