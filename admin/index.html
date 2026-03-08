@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Our Duty — Content Editor</title>
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    #loading-screen {
+      position: fixed; inset: 0;
+      background: #0F2545;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      color: white;
+      z-index: 9999;
+    }
+    #loading-screen h1 {
+      font-size: 28px; font-weight: 700; margin-bottom: 8px;
+    }
+    #loading-screen span { color: #C9952B; }
+    #loading-screen p { opacity: 0.7; font-size: 14px; }
+    .spinner {
+      width: 36px; height: 36px;
+      border: 3px solid rgba(201,149,43,0.3);
+      border-top-color: #C9952B;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 24px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div id="loading-screen">
+    <div class="spinner"></div>
+    <h1>Our <span>Duty</span></h1>
+    <p>Loading content editor…</p>
+  </div>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // Hide loading screen once CMS is ready
+    window.addEventListener('load', function() {
+      const screen = document.getElementById('loading-screen');
+      if (screen) screen.style.display = 'none';
+    });
+    setTimeout(function() {
+      const screen = document.getElementById('loading-screen');
+      if (screen) screen.style.display = 'none';
+    }, 3000);
+  </script>
+</body>
+</html>
